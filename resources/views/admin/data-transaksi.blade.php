@@ -49,9 +49,10 @@
                                             <th>Kode</th>
                                             <th>Detail</th>
                                             <th>Jumlah Bayar</th>
-                                            <th>Tanggal Pembayaran</th>
+                                            <th width="5">Tanggal Pembayaran</th>
                                             <th>Status Pembayaran</th>
                                             <th>Status Approval</th>
+                                            <th>Status Pengiriman</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -101,7 +102,7 @@
                                                         </form>
                                                     @endif
                                                 </td>
-
+                                                <td>{{ $item->status_pengiriman }}</td>
                                             </tr>
                                         @endforeach
                                     </tbody>

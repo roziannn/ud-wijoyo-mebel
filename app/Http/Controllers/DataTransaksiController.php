@@ -37,6 +37,7 @@ class DataTransaksiController extends Controller
             $transaksi = Checkout::findOrFail($id);
             $transaksi->update([
                 'status_pembayaran' => 'disetujui',
+                'status_pengiriman' => 'perlu_dikirim',
             ]);
 
             Flasher::addSuccess('Pembayaran berhasil disetujui!');

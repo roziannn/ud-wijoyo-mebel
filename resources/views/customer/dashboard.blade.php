@@ -37,7 +37,8 @@
                                                     <i class="fa fa-cart-plus fa-4x"></i>
                                                 </div>
                                                 <div>
-                                                    <span class="d-block font-weight-bold text-uppercase">My Order</span>
+                                                    <span class="d-block font-weight-bold text-uppercase">Transaksi
+                                                        Saya</span>
                                                     {{-- <h2 class="mb-0">{{ $order }}</h2> --}}
                                                 </div>
                                             </div>

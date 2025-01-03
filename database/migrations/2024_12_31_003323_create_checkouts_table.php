@@ -22,7 +22,7 @@ return new class extends Migration
             $table->enum('status_pembayaran', ['pending', 'disetujui'])->default('pending');
 
             $table->string('alamat_pengiriman')->nullable();
-            $table->enum('status_pengiriman', ['pending', 'dalam_perjalanan', 'selesai'])->default('pending');
+            $table->enum('status_pengiriman', ['pending', 'perlu_dikirim', 'dalam_perjalanan', 'selesai'])->default('pending');
 
 
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');

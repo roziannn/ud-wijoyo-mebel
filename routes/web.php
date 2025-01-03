@@ -4,6 +4,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\DashboardAdminController;
 use App\Http\Controllers\DashboardCustomerController;
+use App\Http\Controllers\DashboardKurirController;
 use App\Http\Controllers\DataKategoriController;
 use App\Http\Controllers\DataProdukController;
 use App\Http\Controllers\DataRuanganController;
@@ -37,6 +38,15 @@ Route::prefix('customer')->middleware(['auth', 'role:customer'])->group(function
     Route::get('/transaksi', [TransaksiController::class, 'index'])->name('customer.transaksi');
     Route::get('/transaksi/{id}', [TransaksiController::class, 'show'])->name('customer.transaksi.show');
     Route::post('/transaksi/{id}/upload', [TransaksiController::class, 'store'])->name('customer.transaksi.store');
+});
+
+Route::prefix('kurir')->middleware(['auth', 'role:kurir'])->group(function () {
+    Route::get('/dashboard', [DashboardKurirController::class, 'index'])->name('kurir.dashboard');
+    Route::get('/barang-perlu-dikirim', [DashboardKurirController::class, 'perluDikirim'])->name('kurir.perluDikirim');
+    Route::get('/kirim-barang/{id}', [DashboardKurirController::class, 'kirimBarang'])->name('kurir.kirimBarang');
+    Route::get('/selesaikan-pengiriman/{id}', [DashboardKurirController::class, 'selesaikanPengiriman'])->name('kurir.selesaikanPengiriman');
+
+    Route::get('/riwayat-pengiriman', [DashboardKurirController::class, 'riwayat'])->name('kurir.riwayat');
 });
 
 Route::prefix('admin')->middleware(['auth', 'role:admin'])->group(function () {

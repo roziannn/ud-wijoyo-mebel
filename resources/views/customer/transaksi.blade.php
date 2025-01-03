@@ -40,7 +40,8 @@
                                                             <th>Total Amount</th>
                                                             <th>Pembayaran</th>
                                                             <th>Status Pengiriman</th>
-                                                            <th>Aksi</th>
+                                                            <th>Detail Pembelian</th>
+                                                            <th>Pembayaran</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -55,22 +56,28 @@
                                                                 </td>
                                                                 <td>{{ ucfirst($item->payment_status) }}</td>
                                                                 <td>{{ ucfirst($item->status_pengiriman) }}</td>
+                                                                <td><a href="{{ route('customer.transaksi.show', $item->id) }}"
+                                                                        class="text-danger">Detail</a> </td>
                                                                 <td>
-                                                                    <a href="{{ route('customer.transaksi.show', $item->id) }}"
-                                                                        class="text-danger">Detail</a> |
 
-                                                                    @if ($item->bukti_bayar_img)
-                                                                        <span>Berhasil bayar. <br> Menuggu konfirmasi
+
+                                                                    @if ($item->payment_status === 'selesai' && $item->status_pembayaran === 'pending')
+                                                                        <span class="badge badge-warning">Berhasil bayar.
+                                                                            <br> Menuggu konfirmasi
                                                                             admin</span>
+                                                                    @elseif ($item->payment_status === 'selesai' && $item->status_pembayaran === 'disetujui')
+                                                                        <span class="badge badge-success">Pembayaran
+                                                                            telah disetujui</span>
                                                                     @else
-                                                                        <a href="" class="text-primary"
-                                                                            data-toggle="modal"
-                                                                            data-target="#uploadBuktiModal">
+                                                                        <a class="text-primary" data-toggle="modal"
+                                                                            data-target="#uploadBuktiModal{{ $item->id }}"
+                                                                            style="cursor: pointer">
                                                                             Upload Bukti Transfer</a>
                                                                     @endif
 
 
-                                                                    <div class="modal fade" id="uploadBuktiModal"
+                                                                    <div class="modal fade"
+                                                                        id="uploadBuktiModal{{ $item->id }}"
                                                                         tabindex="-1"
                                                                         aria-labelledby="uploadBuktiModalLabel"
                                                                         aria-hidden="true">
@@ -84,7 +91,9 @@
                                                                                     <div class="modal-header">
                                                                                         <h5 class="modal-title"
                                                                                             id="uploadBuktiModalLabel">
-                                                                                            Upload Bukti Transfer</h5>
+                                                                                            Upload Bukti Transfer Kode Beli:
+                                                                                            {{ $item->kode_transaksi }}
+                                                                                        </h5>
                                                                                         <button type="button"
                                                                                             class="btn-close"
                                                                                             data-bs-dismiss="modal"

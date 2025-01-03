@@ -9,7 +9,7 @@
                 <li><a href="/customer/keranjang">Keranjang Saya</a></li>
                 <li><a href="/customer/transaksi">Transaksi Saya</a></li>
                 {{-- <li><a href="{{ route('inbox') }}">Chat</a></li> --}}
-                <li><a href="">Riwayat Pembelian</a></li>
+                <li><a href="">Pengiriman Barang</a></li>
                 {{-- <li><a href="">Building Checklist</a></li> --}}
                 {{-- <li><a href="{{ route('notification') }}">Notification</a></li> --}}
                 {{-- <li><a href="#">History</a></li> --}}

@@ -47,8 +47,9 @@ class TransaksiController extends Controller
 
     function store(Request $request, $id)
     {
+
         $request->validate([
-            'bukti_bayar_img' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'bukti_bayar_img' => 'required|image|mimes:jpeg,png,jpg',
         ]);
 
         $transaksi = Checkout::findOrFail($id);

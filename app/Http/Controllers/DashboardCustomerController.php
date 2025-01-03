@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
 use Illuminate\Http\Request;
 
 class DashboardCustomerController extends Controller
@@ -11,6 +12,7 @@ class DashboardCustomerController extends Controller
      */
     public function index()
     {
+        // $countTransaksi = Cart::where('id_user', auth()->user()->id);
         return view('customer.dashboard');
     }
 
