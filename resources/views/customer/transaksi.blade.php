@@ -62,11 +62,12 @@
 
 
                                                                     @if ($item->payment_status === 'selesai' && $item->status_pembayaran === 'pending')
-                                                                        <span class="badge badge-warning">Berhasil bayar.
+                                                                        <span class="badge p-2 badge-warning">Berhasil
+                                                                            bayar.
                                                                             <br> Menuggu konfirmasi
                                                                             admin</span>
                                                                     @elseif ($item->payment_status === 'selesai' && $item->status_pembayaran === 'disetujui')
-                                                                        <span class="badge badge-success">Pembayaran
+                                                                        <span class="badge p-2 badge-success">Pembayaran
                                                                             telah disetujui</span>
                                                                     @else
                                                                         <a class="text-primary" data-toggle="modal"

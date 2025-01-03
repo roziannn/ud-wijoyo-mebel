@@ -8,11 +8,6 @@
                 <li><a href="/customer/profile">Profile</a></li>
                 <li><a href="/customer/keranjang">Keranjang Saya</a></li>
                 <li><a href="/customer/transaksi">Transaksi Saya</a></li>
-                {{-- <li><a href="{{ route('inbox') }}">Chat</a></li> --}}
-                <li><a href="">Pengiriman Barang</a></li>
-                {{-- <li><a href="">Building Checklist</a></li> --}}
-                {{-- <li><a href="{{ route('notification') }}">Notification</a></li> --}}
-                {{-- <li><a href="#">History</a></li> --}}
                 <li>
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf

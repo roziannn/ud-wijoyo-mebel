@@ -35,7 +35,7 @@
                                     <span>Rp{{ number_format($storeProduct?->harga, 0, ',', '.') }}</span>
                                 </h3>
                             </div>
-                            <div class="d-flex">
+                            {{-- <div class="d-flex">
                                 <div class="product-ratings"><i class="fa fa-star"></i><i class="fa fa-star"></i><i
                                         class="fa fa-star"></i><i class="fa fa-star"></i><i
                                         class="fa fa-star-half-empty"></i> 4,7
@@ -43,7 +43,7 @@
                                 <div class="product-review
                                         mx-4"><i
                                         class="fa fa-comment-o"></i> 102 Reviews </div>
-                            </div>
+                            </div> --}}
                         </div>
 
                         <div class="product-info">

@@ -34,20 +34,16 @@
                                         <div class="card-body">
                                             <div class="d-flex justify-content-start align-items-center">
                                                 <div class="mr-3">
-                                                    <i class="fa fa-cart-plus fa-4x"></i>
+                                                    <i class="fa fa-truck fa-4x"></i>
                                                 </div>
                                                 <div>
-                                                    <span class="d-block font-weight-bold text-uppercase">Transaksi
-                                                        Saya</span>
-                                                    {{-- <h2 class="mb-0">{{ $order }}</h2> --}}
+                                                    <span class="d-block font-weight-bold text-uppercase">Pengiriman
+                                                        Berjalan</span>
+                                                    <h2 class="mb-0">{{ $countBerjalan }}</h2>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="card-footer">
-                                            {{-- <div class="text-right">
-                                                <a href="{{ route('customer.order') }}"
-                                                    class="text-secondary text-muted">All Transaction </a>
-                                            </div> --}}
                                         </div>
                                     </div>
 
@@ -61,9 +57,9 @@
                                                     <i class="fa fa-history fa-4x"></i>
                                                 </div>
                                                 <div>
-                                                    <span class="d-block font-weight-bold text-uppercase">History
-                                                        Transaction</span>
-                                                    {{-- <h2 class="mb-0">{{ $order }}</h2> --}}
+                                                    <span class="d-block font-weight-bold text-uppercase">Riwayat
+                                                        Pembelian</span>
+                                                    <h2 class="mb-0">{{ $countTransaksi }}</h2>
                                                 </div>
                                             </div>
                                         </div>

@@ -75,7 +75,7 @@
                                                         class="badge
                                                         @if ($item->payment_status === 'pending') badge-warning
                                                         @elseif ($item->payment_status === 'selesai')
-                                                            badge-success @endif">
+                                                            badge-success p-2 @endif">
                                                         {{ ucfirst($item->payment_status) }}
                                                     </span>
                                                     @if ($item->payment_status === 'selesai')
@@ -88,7 +88,7 @@
                                                         class="badge
                                                         @if ($item->status_pembayaran === 'pending') badge-warning
                                                         @elseif ($item->status_pembayaran === 'disetujui')
-                                                            badge-success @endif">
+                                                            badge-success p-2 @endif">
                                                         {{ ucfirst($item->status_pembayaran) }}
                                                     </span>
                                                     @if ($item->status_pembayaran === 'pending' && $item->payment_status === 'selesai')
@@ -102,7 +102,14 @@
                                                         </form>
                                                     @endif
                                                 </td>
-                                                <td>{{ $item->status_pengiriman }}</td>
+                                                <td>
+                                                    <span
+                                                        class="badge p-2
+                                                    @if ($item->status_pengiriman === 'dalam_perjalanan') badge-warning
+                                                    @elseif ($item->status_pengiriman === 'selesai')
+                                                        badge-success @endif">
+                                                        {{ ucfirst($item->status_pengiriman) }} </span>
+                                                </td>
                                             </tr>
                                         @endforeach
                                     </tbody>

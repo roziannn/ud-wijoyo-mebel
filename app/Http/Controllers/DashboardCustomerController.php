@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cart;
+use App\Models\Checkout;
 use Illuminate\Http\Request;
 
 class DashboardCustomerController extends Controller
@@ -12,8 +13,13 @@ class DashboardCustomerController extends Controller
      */
     public function index()
     {
-        // $countTransaksi = Cart::where('id_user', auth()->user()->id);
-        return view('customer.dashboard');
+        $userId = auth()->user()->id;
+        // dd($userId);
+        $countTransaksi = Checkout::where('id_user', $userId)->where('status_pengiriman', 'selesai')->count();
+
+        $countBerjalan = Checkout::where('id_user', $userId)->where('status_pengiriman', 'dalam_pengiriman')->count();
+
+        return view('customer.dashboard', compact('countTransaksi', 'countBerjalan'));
     }
 
     /**

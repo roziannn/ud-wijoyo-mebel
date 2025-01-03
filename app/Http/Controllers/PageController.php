@@ -10,4 +10,9 @@ class PageController extends Controller
     {
         return view('guest.about-us');
     }
+
+    function contactUs()
+    {
+        return view('guest.customer-service');
+    }
 }

@@ -48,7 +48,7 @@
                     <div class="col-sm-4">
                         <div class="page-header float-left">
                             <div class="page-title">
-                                <h1>Perlu Dikirim</h1>
+                                <h1>Riwayat Pengiriman</h1>
                             </div>
                         </div>
                     </div>
@@ -58,7 +58,7 @@
                                 <ol class="breadcrumb text-right">
                                     <li><a href="#">Dashboard</a></li>
                                     <li><a href="#">Pengiriman Barang</a></li>
-                                    <li class="active">Perlu Dikirim</li>
+                                    <li class="active">Riwayat Pengiriman</li>
                                 </ol>
                             </div>
                         </div>
@@ -88,7 +88,8 @@
                                             <th>Kode Transaksi</th>
                                             <th>Penerima</th>
                                             <th>Alamat</th>
-                                            <th>Status Pengiriman</th>
+                                            <th>Status</th>
+                                            <th>Tanggal Selesai</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -102,8 +103,9 @@
                                                 <td>{{ $item->customer->nama_lengkap }}</td>
                                                 <td>{{ $item->alamat_pengiriman }}</td>
                                                 <td><span
-                                                        class="badge badge-primary p-2">{{ $item->status_pengiriman }}</span>
+                                                        class="badge badge-secondary p-2">{{ $item->status_pengiriman }}</span>
                                                 </td>
+                                                <td>{{ $item->updated_at->format('d F Y, H:s:i') }}</td>
                                             </tr>
                                         @endforeach
                                     </tbody>

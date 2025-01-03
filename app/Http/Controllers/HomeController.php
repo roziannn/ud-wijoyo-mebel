@@ -44,6 +44,23 @@ class HomeController extends Controller
             }
         }
 
+        if ($request->has('ruangan')) {
+            $ruanganName = $request->ruangan;
+
+            $ruangans = Ruangan::where('nama', $ruanganName)->first();
+            // dd($ruangan);
+
+            if ($ruangans) {
+                $storeProduct->where('jenis_ruangan', $ruangans->nama);
+            }
+        }
+
+        if ($request->has('search')) {
+            $searchTerm = $request->search;
+            $storeProduct->where('nama', 'LIKE', '%' . $searchTerm . '%');
+        }
+
+
         $storeProduct = $storeProduct->get();
 
         return view('guest.all-product', compact('storeProduct', 'kategori', 'ruangan'));

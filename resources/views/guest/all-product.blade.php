@@ -43,13 +43,13 @@
                                 @foreach ($ruangan as $item)
                                     <li>
                                         <a
-                                            href="{{ route('all.produk', ['category' => $item->nama]) }}">{{ $item->nama }}</a>
+                                            href="{{ route('all.produk', ['ruangan' => $item->nama]) }}">{{ $item->nama }}</a>
                                     </li>
                                 @endforeach
                             </ul>
                         </div>
 
-                        <div class="single-widget range">
+                        {{-- <div class="single-widget range">
                             <h3 class="title">Filter Produk</h3>
                             <div class="price-filter">
                             </div>
@@ -58,7 +58,7 @@
                                 <li><a href="{{ route('all.produk') }}">Harga Tertinggi</a></li>
                                 <li><a href="{{ route('all.produk') }}">Harga Terendah</a></li>
                             </ul>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <div class="col-lg-9 col-md-8 col-12">

@@ -5,6 +5,7 @@ use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\DashboardAdminController;
 use App\Http\Controllers\DashboardCustomerController;
 use App\Http\Controllers\DashboardKurirController;
+use App\Http\Controllers\DashboardOwnerController;
 use App\Http\Controllers\DataKategoriController;
 use App\Http\Controllers\DataProdukController;
 use App\Http\Controllers\DataRuanganController;
@@ -49,6 +50,10 @@ Route::prefix('kurir')->middleware(['auth', 'role:kurir'])->group(function () {
     Route::get('/riwayat-pengiriman', [DashboardKurirController::class, 'riwayat'])->name('kurir.riwayat');
 });
 
+Route::prefix('owner')->middleware(['auth', 'role:owner'])->group(function () {
+    Route::get('/dashboard', [DashboardOwnerController::class, 'index'])->name('owner.dashboard');
+});
+
 Route::prefix('admin')->middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/dashboard', [DashboardAdminController::class, 'index'])->name('admin.dashboard');
     Route::get('/data-produk', [DataProdukController::class, 'index'])->name('admin.data-produk');
@@ -79,6 +84,7 @@ Route::prefix('admin')->middleware(['auth', 'role:admin'])->group(function () {
 Route::get('/produk/{slug}', [HomeController::class, 'singleProduk'])->name('single.produk');
 Route::get('/semua-produk', [HomeController::class, 'allProduk'])->name('all.produk');
 Route::get('/tentang-kami', [PageController::class, 'aboutUs'])->name('about.us');
+Route::get('/kontak-kami', [PageController::class, 'contactUs'])->name('kontak.kami');
 
 
 require __DIR__ . '/auth.php';

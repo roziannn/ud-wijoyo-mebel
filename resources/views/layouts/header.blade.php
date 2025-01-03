@@ -8,8 +8,8 @@
                     <!-- Top Left -->
                     <div class="top-left">
                         <ul class="list-main">
-                            <li><i class="ti-headphone-alt"></i> +060 (800) 801-582</li>
-                            <li><i class="ti-email"></i> support@shophub.com</li>
+                            <li><i class="ti-headphone-alt"></i> +62 812 3456 7890</li>
+                            <li><i class="ti-email"></i> wijoyo@example.com</li>
                         </ul>
                     </div>
                     <!--/ End Top Left -->
@@ -19,8 +19,8 @@
                     <div class="right-content">
                         <ul class="list-main">
                             <ul class="list-main">
-                                <li><i class="ti-location-pin"></i> Lokasi Toko</li>
-                                <li><i class="ti-archive"></i>Lokasi Gudang</li>
+                                {{-- <li><i class="ti-location-pin"></i> Lokasi Toko</li>
+                                <li><i class="ti-archive"></i>Lokasi Gudang</li> --}}
                                 @guest
                                     <li><i class="ti-power-off"></i> <a href="{{ route('login') }}">Login/Register</a></li>
                                 @endguest
@@ -160,7 +160,7 @@
                                                 </ul>
                                             </li>
                                             <li><a href="{{ route('about.us') }}">Tentang Kami</a></li>
-                                            <li><a href="contact.html">Customer Service</a></li>
+                                            <li><a href="{{ route('kontak.kami') }}">Kontak Kami</a></li>
                                         </ul>
                                     </div>
                                 </div>
