@@ -20,7 +20,7 @@
                         <ul class="list-main">
                             <ul class="list-main">
                                 <li><i class="ti-location-pin"></i> Lokasi Toko</li>
-                                <li><i class="ti-archive"></i> Gudang</li>
+                                <li><i class="ti-archive"></i>Lokasi Gudang</li>
                                 @guest
                                     <li><i class="ti-power-off"></i> <a href="{{ route('login') }}">Login/Register</a></li>
                                 @endguest
@@ -73,18 +73,19 @@
                 <div class="col-lg-2 col-md-3 col-12">
                     <div class="right-bar">
                         <!-- Search Form -->
-                        <div class="sinlge-bar">
-                            <a href="#" class="single-icon"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                        </div>
+                        {{-- <div class="sinlge-bar">
+                            <a href="" class="single-icon"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                        </div> --}}
                         <div class="sinlge-bar">
                             <a href="{{ route('customer.dashboard') }}" class="single-icon"><i
                                     class="fa fa-user-circle-o" aria-hidden="true"></i></a>
                         </div>
                         <div class="sinlge-bar shopping">
-                            <a href="#" class="single-icon"><i class="ti-bag"></i> <span
-                                    class="total-count">2</span></a>
-                            <!-- Shopping Item -->
-                            <div class="shopping-item">
+                            {{-- <span
+                                    class="total-count"></span> --}}
+                            <a href="{{ route('customer.cart') }}" class="single-icon"><i class="ti-shopping-cart"></i>
+                            </a>
+                            {{-- <div class="shopping-item">
                                 <div class="dropdown-cart-header">
                                     <span>2 Items</span>
                                     <a href="#">View Cart</a>
@@ -114,8 +115,7 @@
                                     </div>
                                     <a href="checkout.html" class="btn animate">Checkout</a>
                                 </div>
-                            </div>
-                            <!--/ End Shopping Item -->
+                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -134,7 +134,7 @@
                                 <div class="navbar-collapse">
                                     <div class="nav-inner">
                                         <ul class="nav main-menu menu navbar-nav">
-                                            <li class=""><a href="#">Home</a></li>
+                                            <li class=""><a href="{{ route('customer.home') }}">Home</a></li>
                                             <li><a href="{{ route('all.produk') }}">Semua Produk</a></li>
                                             <li><a href="#">Produk Kategori<i class="ti-angle-down"></i><span
                                                         class="new">New</span></a>
@@ -159,7 +159,7 @@
                                                     <li><a href="checkout.html">Ruang Makan</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="contact.html">Tentang Kami</a></li>
+                                            <li><a href="{{ route('about.us') }}">Tentang Kami</a></li>
                                             <li><a href="contact.html">Customer Service</a></li>
                                         </ul>
                                     </div>

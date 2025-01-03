@@ -66,24 +66,24 @@
                             </table>
                         </div>
                         <div class="row">
-                            <form action="" method="POST">
+                            <form action="{{ route('customer.cart.add') }}" method="POST">
                                 @csrf
                                 <div class="d-none">
-                                    <input name="product_id" value="{{ $storeProduct?->id }}">
-                                    <input name="store_name" value="{{ $storeProduct?->nama }}">
-                                    <input name="item_image" value="{{ $storeProduct?->image }}">
+                                    <input name="id_produk" value="{{ $storeProduct?->id }}">
+                                    <input name="nama" value="{{ $storeProduct?->nama }}">
                                     <input name="item_qty" value="1">
-                                    <input name="item_price" value="{{ $storeProduct?->harga }}">
+                                    <input name="item_harga" value="{{ $storeProduct?->harga }}">
+                                    <input name="image" value="{{ $storeProduct?->image }}">
                                 </div>
 
-
-                                <a class="btn text-white mr-3"><i class="fa fa-shopping-cart mr-2"></i> Tambah Ke
-                                    Keranjang</a>
+                                <button type="submit" class="btn text-white mr-3 p-3" style="cursor: pointer">
+                                    <i class="fa fa-shopping-cart mr-2"></i> Tambah Ke Keranjang
+                                </button>
                             </form>
-                            <a class="btn text-white"><i class="fa fa-shopping-basket mr-2"></i>Beli Sekarang
-                            </a>
+                            {{-- <a class="btn text-white" style="cursor: pointer"><i class="fa fa-shopping-basket mr-2"></i>Beli
+                                Sekarang
+                            </a> --}}
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -91,49 +91,7 @@
     </section>
 
 
-
-    <section class="shop-services section p-0 pt-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 col-12">
-                    <!-- Start Single Service -->
-                    <div class="single-service">
-                        <i class="ti-rocket"></i>
-                        <h4>Pengiriman Murah</h4>
-                        <p>Biaya pengiriman terjangkau</p>
-                    </div>
-                    <!-- End Single Service -->
-                </div>
-                <div class="col-lg-3 col-md-6 col-12">
-                    <!-- Start Single Service -->
-                    <div class="single-service">
-                        <i class="ti-reload"></i>
-                        <h4>Garansi Pengembalian</h4>
-                        <p>7 hari pengembalian</p>
-                    </div>
-                    <!-- End Single Service -->
-                </div>
-                <div class="col-lg-3 col-md-6 col-12">
-                    <!-- Start Single Service -->
-                    <div class="single-service">
-                        <i class="ti-lock"></i>
-                        <h4>Pembayaran Terpercaya</h4>
-                        <p>100% aman</p>
-                    </div>
-                    <!-- End Single Service -->
-                </div>
-                <div class="col-lg-3 col-md-6 col-12">
-                    <!-- Start Single Service -->
-                    <div class="single-service">
-                        <i class="ti-tag"></i>
-                        <h4>Harga Bersahabat</h4>
-                        <p>Untuk budget terbaik</p>
-                    </div>
-                    <!-- End Single Service -->
-                </div>
-            </div>
-        </div>
-    </section>
+    @include('guest.benefit-store')
 
     <section>
         <div class="container">

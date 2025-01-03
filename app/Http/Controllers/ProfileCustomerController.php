@@ -49,8 +49,8 @@ class ProfileCustomerController extends Controller
             $customer->nama_lengkap = $validatedData['nama_lengkap'];
             $customer->no_telp = $validatedData['no_telp'];
             $customer->alamat = $validatedData['alamat'];
-            $customer->provinsi = $validatedData['provinsi'];
-            $customer->kota = $validatedData['kota'];
+            $customer->id_provinsi = $validatedData['provinsi'];
+            $customer->id_kota = $validatedData['kota'];
             $customer->kode_pos = $validatedData['kode_pos'];
             $customer->save();
 

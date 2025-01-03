@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('customers', function (Blueprint $table) {
             $table->id();
-            $table->string('id_user');
+            $table->unsignedBigInteger('id_user');
             $table->string('nama_lengkap');
             $table->string('no_telp');
             $table->string('alamat');
-            $table->string('provinsi');
-            $table->string('kota');
+            $table->unsignedBigInteger('id_provinsi');
+            $table->unsignedBigInteger('id_kota');
             $table->string('kode_pos');
             $table->timestamps();
         });

@@ -65,7 +65,7 @@
                                                 <select class="nice-select province" name="provinsi">
                                                     <option class="text-muted">--Select Provinsi--</option>
                                                     @foreach ($provinces as $item)
-                                                        <option value="{{ $item->id }}" @selected($item->id == $customerInfo?->provinsi)>
+                                                        <option value="{{ $item->id }}" @selected($item->id == $customerInfo?->id_provinsi)>
                                                             {{ $item->name }}</option>
                                                     @endforeach
                                                 </select>
@@ -77,7 +77,7 @@
                                                 <select class="nice-select regency" name="kota">
                                                     <option class="text-muted">--Select Regensi/Kota--</option>
                                                     @foreach ($regencies as $item)
-                                                        <option value="{{ $item->id }}" @selected($item->id == $customerInfo?->kota)>
+                                                        <option value="{{ $item->id }}" @selected($item->id == $customerInfo?->id_kota)>
                                                             {{ $item->name }}</option>
                                                     @endforeach
                                                 </select>

@@ -1068,13 +1068,29 @@ object {
     display: block;
 }
 
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 700px;
+}
+
+/* Untuk layar ponsel */
+@media (max-width: 767px) {
+    .modal {
+        width: 100%; /* Atur lebar modal menjadi lebih kecil */
+    }
+}
+
 /* Start Modal Css */
-.modal-dialog .quickview-slider-active {
+/* .modal-dialog .quickview-slider-active {
     display: block;
     height: 100%;
     width: 550px;
-    height: 100%;
 }
+
+/*
 .modal-dialog .quickview-slider-active img {
     display: inline-block;
 }
@@ -1118,9 +1134,9 @@ object {
         max-width: 100%;
         padding: 35px 0;
     }
-}
+} */
 
-.modal-dialog .modal-content {
+/* .modal-dialog .modal-content {
     border-radius: 0;
 }
 
@@ -1138,7 +1154,7 @@ object {
         right: 0px;
         top: -10px;
     }
-}
+} */
 .modal-dialog .modal-content .modal-header .close {
     color: #fff;
     cursor: pointer;
@@ -1170,13 +1186,7 @@ object {
 .modal-dialog .modal-content .modal-header .close:hover {
     color: #fff;
     border-color: transparent;
-    background: #f7941d;
-}
-.modal-dialog .modal-content .modal-body {
-    padding: 0px;
-    overflow-y: auto;
-    max-height: 510px;
-    height: 700px;
+    background: #64935c;
 }
 .quickview-content {
     padding: 40px 40px;

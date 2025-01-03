@@ -102,7 +102,13 @@
 
                     <a class="nav-link" href="#"><i class="fa fa -cog"></i>Settings</a>
 
-                    <a class="nav-link" href="#"><i class="fa fa-power -off"></i>Logout</a>
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <a class="nav-link text-danger"
+                            onclick="event.preventDefault();
+                    this.closest('form').submit();"
+                            href="{{ route('logout') }}"><i class="fa fa-power -off"></i>Logout</a>
+                    </form>
                 </div>
             </div>
 
