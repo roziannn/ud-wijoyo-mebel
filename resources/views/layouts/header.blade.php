@@ -19,8 +19,6 @@
                     <div class="right-content">
                         <ul class="list-main">
                             <ul class="list-main">
-                                {{-- <li><i class="ti-location-pin"></i> Lokasi Toko</li>
-                                <li><i class="ti-archive"></i>Lokasi Gudang</li> --}}
                                 @guest
                                     <li><i class="ti-power-off"></i> <a href="{{ route('login') }}">Login/Register</a></li>
                                 @endguest

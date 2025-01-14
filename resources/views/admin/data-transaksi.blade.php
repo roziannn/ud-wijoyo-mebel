@@ -120,10 +120,10 @@
                 </div>
             </div>
         </div>
-        < <div class="clearfix">
-    </div>
+        <div class="clearfix">
+        </div>
 
-    @include('admin.footer')
+        @include('admin.footer')
 
     </div>
 

@@ -1,11 +1,9 @@
 <!doctype html>
-<html class="no-js" lang=""> <!--<![endif]-->
+<html class="no-js" lang="">
 @include('admin.head')
 
 <body>
     @include('admin.sidebar')
-
-    <!-- Right Panel -->
 
     <div id="right-panel" class="right-panel">
         @include('admin.header')
@@ -15,7 +13,7 @@
                     <div class="col-sm-4">
                         <div class="page-header float-left">
                             <div class="page-title">
-                                <h1>Data Kategori</h1>
+                                <h1>Kategori Operasional</h1>
                             </div>
                         </div>
                     </div>
@@ -24,8 +22,8 @@
                             <div class="page-title">
                                 <ol class="breadcrumb text-right">
                                     <li><a href="#">Dashboard</a></li>
-                                    <li><a href="#">Master Data</a></li>
-                                    <li class="active">Data Kategori</li>
+                                    <li><a href="#">Operasional</a></li>
+                                    <li class="active">Kategori</li>
                                 </ol>
                             </div>
                         </div>
@@ -40,8 +38,11 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
+                                <div class="alert alert-warning mt-3"><strong>Digunakan untuk kategori pengeluaran
+                                        operasional
+                                        toko dan layanan</strong></div>
                                 <div class="d-flex justify-content-between align">
-                                    <strong class="card-title">Data Kategori Produk</strong>
+                                    <strong class="card-title">Data Kategori Operasional</strong>
                                     <button type="button" class="btn btn-sm btn-primary" data-toggle="modal"
                                         data-target="#addModal">
                                         Tambah Kategori
@@ -62,7 +63,7 @@
                                         @php
                                             $i = 1;
                                         @endphp
-                                        @foreach ($kategoris as $item)
+                                        @foreach ($datas as $item)
                                             <tr>
                                                 <td>{{ $i++ }}</td>
                                                 <td>{{ $item->nama }}</td>
@@ -75,7 +76,7 @@
                                                         <i class="ti ti-pencil-alt"></i>
                                                     </a>
 
-                                                    <a href="{{ route('admin.data-kategori.delete', $item->id) }}"
+                                                    <a href="{{ route('admin.kategori-operasional.delete', $item->id) }}"
                                                         class="btn btn-sm btn-danger delete-item"><i
                                                             class="ti ti-trash"></i></a>
                                                 </td>
@@ -94,7 +95,7 @@
                         <div class="modal-header">
                             <h5 class="modal-title" id="addModal">Tambah Kategori</h5>
                         </div>
-                        <form action="{{ route('admin.data-kategori.store') }}" method="POST">
+                        <form action="{{ route('admin.kategori-operasional.store') }}" method="POST">
                             <div class="modal-body">
                                 @csrf
                                 <div class="form-group mb-3">
@@ -153,7 +154,7 @@
                 const nama = $(this).data("nama");
 
                 $("#editModal #nama").val(nama);
-                $("#editModal form").attr("action", `/admin/data-kategori/update/${id}`);
+                $("#editModal form").attr("action", `/admin/kategori-operasional/update/${id}`);
             });
         });
     </script>

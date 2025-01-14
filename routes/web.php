@@ -11,6 +11,8 @@ use App\Http\Controllers\DataProdukController;
 use App\Http\Controllers\DataRuanganController;
 use App\Http\Controllers\DataTransaksiController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\KategoriOperasionalController;
+use App\Http\Controllers\KelolaOperasionalController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProfileCustomerController;
@@ -79,6 +81,18 @@ Route::prefix('admin')->middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/transaksi-customer', [DataTransaksiController::class, 'index'])->name('admin.transaksi-customer');
     Route::get('/transaksi-customer/{kode}', [DataTransaksiController::class, 'show'])->name('admin.transaksi-customer.show');
     Route::post('/transaksi-customer/approve/{id}', [DataTransaksiController::class, 'approve'])->name('admin.transaksi-customer.approve');
+
+    ### DATA KATEGORI OPERASIONAL
+    Route::get('/kategori-operasional', [KategoriOperasionalController::class, 'kategoriShow'])->name('admin.kategori-operasional');
+    Route::post('/kategori-operasional/store', [KategoriOperasionalController::class, 'kategoriStore'])->name('admin.kategori-operasional.store');
+    Route::delete('/kategori-operasional/delete/{id}', [KategoriOperasionalController::class, 'kategoriDelete'])->name('admin.kategori-operasional.delete');
+    Route::put('/kategori-operasional/update/{id}', [KategoriOperasionalController::class, 'kategoriUpdate'])->name('admin.kategori-operasional.update');
+
+    ### DATA KELOLA OPERASIONAL
+    Route::get('/kelola-operasional', [KelolaOperasionalController::class, 'index'])->name('admin.kelola-operasional');
+    // Route::post('/kategori-operasional/store', [KategoriOperasionalController::class, 'kategoriStore'])->name('admin.kategori-operasional.store');
+    // Route::delete('/kategori-operasional/delete/{id}', [KategoriOperasionalController::class, 'kategoriDelete'])->name('admin.kategori-operasional.delete');
+    // Route::put('/kategori-operasional/update/{id}', [KategoriOperasionalController::class, 'kategoriUpdate'])->name('admin.kategori-operasional.update');
 });
 
 Route::get('/produk/{slug}', [HomeController::class, 'singleProduk'])->name('single.produk');

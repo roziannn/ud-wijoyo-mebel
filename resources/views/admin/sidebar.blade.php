@@ -21,6 +21,15 @@
                     <a href="{{ route('admin.transaksi-customer') }}"> <i class="menu-icon ti-folder"></i>Transaksi
                         Customer</a>
                 </li>
+                <li class="">Oprasional</li>
+                <li>
+                    <a href="{{ route('admin.kelola-operasional') }}"> <i class="menu-icon ti-folder"></i>Kelola
+                        Operasional</a>
+                </li>
+                <li>
+                    <a href="{{ route('admin.kategori-operasional') }}"> <i class="menu-icon ti-folder"></i>Kategori
+                        Operasional</a>
+                </li>
                 {{-- <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Icons</a>
