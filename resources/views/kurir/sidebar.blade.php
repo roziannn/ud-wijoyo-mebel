@@ -6,7 +6,6 @@
                 <li class="active">
                     <a href="{{ route('kurir.dashboard') }}"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
                 </li>
-                <li class="">Pengiriman Barang</li>
                 <li>
                     <a href="{{ route('kurir.perluDikirim') }}"> <i class="menu-icon ti-folder"></i>Perlu Dikirim
                     </a>

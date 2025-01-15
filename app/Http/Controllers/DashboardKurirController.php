@@ -4,14 +4,23 @@ namespace App\Http\Controllers;
 
 use App\Models\Checkout;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Flasher\Laravel\Facade\Flasher;
 
 class DashboardKurirController extends Controller
 {
-    function index()
+    public function index()
     {
-        return view('kurir.dashboard');
+        $statusCounts = [
+            'pending' => Checkout::where('status_pengiriman', 'pending')->count(),
+            'dalam_perjalanan' => Checkout::where('status_pengiriman', 'dalam_perjalanan')->count(),
+            'selesai' => Checkout::where('status_pengiriman', 'selesai')->count(),
+            'perlu_dikirim' => Checkout::where('status_pengiriman', 'perlu_dikirim')->count(),
+        ];
+
+        return view('kurir.dashboard', compact('statusCounts'));
     }
+
 
     function perluDikirim()
     {

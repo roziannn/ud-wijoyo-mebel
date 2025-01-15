@@ -37,8 +37,8 @@
                                                     <i class="fa fa-truck fa-4x"></i>
                                                 </div>
                                                 <div>
-                                                    <span class="d-block font-weight-bold text-uppercase">Pengiriman
-                                                        Berjalan</span>
+                                                    <span class="d-block font-weight-bold text-uppercase">Sedang
+                                                        Dikirim</span>
                                                     <h2 class="mb-0">{{ $countBerjalan }}</h2>
                                                 </div>
                                             </div>
@@ -46,8 +46,6 @@
                                         <div class="card-footer">
                                         </div>
                                     </div>
-
-
                                 </div>
                                 <div class="col-lg-6 col-md-6">
                                     <div class="card">

@@ -4,11 +4,10 @@
         <div id="main-menu" class="main-menu collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="active">
-                    <a href="{{ route('kurir.dashboard') }}"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
+                    <a href="{{ route('owner.dashboard') }}"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
                 </li>
-                <li class="">Laporan</li>
                 <li>
-                    <a href="{{ route('kurir.perluDikirim') }}"> <i class="menu-icon ti-folder"></i>Penjualan
+                    <a href="{{ route('owner.laporan') }}"> <i class="menu-icon ti-wallet"></i>Laporan Laba
                     </a>
                 </li>
             </ul>

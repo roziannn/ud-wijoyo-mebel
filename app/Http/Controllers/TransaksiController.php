@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Cart;
 use App\Models\Checkout;
 use App\Models\Customer;
+use App\Models\Pendapatan;
 use Illuminate\Http\Request;
 use Flasher\Laravel\Facade\Flasher;
 
@@ -63,6 +64,13 @@ class TransaksiController extends Controller
                 'bukti_bayar_img' => $path,
                 'tanggal_pembayaran' => now(),
                 'payment_status' => 'selesai'
+            ]);
+
+            // insert ke tabel pendapatans
+            Pendapatan::create([
+                'id_checkout' => $transaksi->id,
+                'total_pendapatan' => $transaksi->total_amount,
+                'tanggal_masuk' => now(),
             ]);
         }
 

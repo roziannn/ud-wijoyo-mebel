@@ -17,7 +17,7 @@ class DashboardCustomerController extends Controller
         // dd($userId);
         $countTransaksi = Checkout::where('id_user', $userId)->where('status_pengiriman', 'selesai')->count();
 
-        $countBerjalan = Checkout::where('id_user', $userId)->where('status_pengiriman', 'dalam_pengiriman')->count();
+        $countBerjalan = Checkout::where('id_user', $userId)->where('status_pengiriman', 'dalam_perjalanan')->count();
 
         return view('customer.dashboard', compact('countTransaksi', 'countBerjalan'));
     }

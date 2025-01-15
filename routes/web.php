@@ -54,6 +54,8 @@ Route::prefix('kurir')->middleware(['auth', 'role:kurir'])->group(function () {
 
 Route::prefix('owner')->middleware(['auth', 'role:owner'])->group(function () {
     Route::get('/dashboard', [DashboardOwnerController::class, 'index'])->name('owner.dashboard');
+    Route::get('/laporan-laba', [DashboardOwnerController::class, 'laporan'])->name('owner.laporan');
+    Route::get('/laporan-laba/{tanggal}', [DashboardOwnerController::class, 'rincianLaporan'])->name('owner.laporan-rincian');
 });
 
 Route::prefix('admin')->middleware(['auth', 'role:admin'])->group(function () {
@@ -90,6 +92,9 @@ Route::prefix('admin')->middleware(['auth', 'role:admin'])->group(function () {
 
     ### DATA KELOLA OPERASIONAL
     Route::get('/kelola-operasional', [KelolaOperasionalController::class, 'index'])->name('admin.kelola-operasional');
+    Route::post('/kelola-operasional/store', [KelolaOperasionalController::class, 'store'])->name('admin.kelola-operasional.store');
+    Route::put('/kelola-operasional/update/{id}', [KelolaOperasionalController::class, 'update'])->name('admin.kelola-operasional.update');
+
     // Route::post('/kategori-operasional/store', [KategoriOperasionalController::class, 'kategoriStore'])->name('admin.kategori-operasional.store');
     // Route::delete('/kategori-operasional/delete/{id}', [KategoriOperasionalController::class, 'kategoriDelete'])->name('admin.kategori-operasional.delete');
     // Route::put('/kategori-operasional/update/{id}', [KategoriOperasionalController::class, 'kategoriUpdate'])->name('admin.kategori-operasional.update');

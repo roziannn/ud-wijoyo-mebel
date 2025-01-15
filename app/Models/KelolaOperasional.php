@@ -10,6 +10,6 @@ class KelolaOperasional extends Model
 
     public function kategoriOperasional()
     {
-        return $this->belongsTo(KategoriOperasional::class, 'id_kategori_operasional');
+        return $this->belongsTo(KategoriOperasional::class, 'id_kategori_operasional', 'id');
     }
 }
