@@ -15,4 +15,9 @@ class PageController extends Controller
     {
         return view('guest.customer-service');
     }
+
+    function caraPembayaran()
+    {
+        return view('guest.cara-pembayaran');
+    }
 }

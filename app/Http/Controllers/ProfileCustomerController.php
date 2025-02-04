@@ -26,6 +26,7 @@ class ProfileCustomerController extends Controller
 
     function updateProfile(Request $request)
     {
+        // dd($request->all());
         $validatedData = $request->validate([
             'nama_lengkap' => 'required|string|max:100',
             'no_telp' => 'required|string|max:15',

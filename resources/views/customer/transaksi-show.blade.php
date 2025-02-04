@@ -94,17 +94,17 @@
                                                         </p>
                                                     </div>
                                                 </div>
-                                        </div>
-                                    @elseif ($isPending && $currentDate > $deadline)
-                                        <div class="alert alert-danger">
-                                            <strong>Perhatian!</strong> Tenggat waktu pembayaran telah terlewati.
-                                            Hubungi layanan pelanggan untuk informasi lebih lanjut.
-                                        </div>
-                                        @endif
+                                            @elseif ($isPending && $currentDate > $deadline)
+                                                <div class="alert alert-danger">
+                                                    <strong>Perhatian!</strong> Tenggat waktu pembayaran telah terlewati.
+                                                    Hubungi layanan pelanggan untuk informasi lebih lanjut.
+                                                </div>
+                                            @endif
 
-                                        <div class="card-footer text-right">
-                                            <a href="{{ route('customer.transaksi') }}"
-                                                class="btn btn-secondary text-white">Kembali</a>
+                                            <div class="card-footer text-right">
+                                                <a href="{{ route('customer.transaksi') }}"
+                                                    class="btn btn-secondary text-white">Kembali</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -113,8 +113,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-        </div>
         </div>
     </section>
 @endsection

@@ -24,10 +24,8 @@
                      <div class="single-footer links">
                          <h4>Information</h4>
                          <ul>
-                             <li><a href="#">Tentang Kami</a></li>
-                             <li><a href="#">Pertanyaan</a></li>
-                             <li><a href="#">Terms & Conditions</a></li>
-                             <li><a href="#">Kontak Kami</a></li>
+                             <li><a href="/tentang-kami">Tentang Kami</a></li>
+                             <li><a href="/kontak-kami">Kontak Kami</a></li>
                          </ul>
                      </div>
                      <!-- End Single Widget -->
@@ -37,10 +35,7 @@
                      <div class="single-footer links">
                          <h4>Customer Service</h4>
                          <ul>
-                             <li><a href="#">Cara Pembayaran</a></li>
-                             <li><a href="#">Pengiriman Produk</a></li>
-                             <li><a href="#">Area Pengiriman</a></li>
-                             <li><a href="#">Privacy Policy</a></li>
+                             <li><a href="/cara-pembayaran">Cara Pembayaran</a></li>
                          </ul>
                      </div>
                      <!-- End Single Widget -->

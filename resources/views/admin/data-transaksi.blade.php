@@ -37,8 +37,10 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <div class="d-flex justify-content-between align">
+                                <div class="d-flex justify-content-between align-items-center">
                                     <strong class="card-title">Transaksi Customer</strong>
+                                    <a href="{{ route('transaksi.export') }}" class="btn btn-primary btn-sm"><i
+                                            class="fa fa-download mr-2"></i>Download</a>
                                 </div>
                             </div>
                             <div class="card-body">
@@ -65,7 +67,7 @@
                                                 <td>{{ $item->kode_transaksi }}</td>
                                                 <td>
                                                     <a href="{{ route('admin.transaksi-customer.show', $item->kode_transaksi) }}"
-                                                        class="text-danger">Detail Transaksi</a>
+                                                        class="text-danger">Lihat detail</a>
                                                 </td>
                                                 <td>Rp {{ number_format($item->total_amount, 0, ',', '.') }}
                                                 </td>
@@ -73,20 +75,20 @@
                                                 <td>
                                                     <span
                                                         class="badge
-                                                        @if ($item->payment_status === 'pending') badge-warning
+                                                        @if ($item->payment_status === 'pending') badge-warning p-2
                                                         @elseif ($item->payment_status === 'selesai')
                                                             badge-success p-2 @endif">
                                                         {{ ucfirst($item->payment_status) }}
                                                     </span>
                                                     @if ($item->payment_status === 'selesai')
                                                         <a href="{{ asset('storage/' . $item->bukti_bayar_img) }}" |
-                                                            target="_blank" class="text-primary">Lihat Bukti Bayar</a>
+                                                            target="_blank" class="text-primary">Lihat Bukti</a>
                                                     @endif
                                                 </td>
                                                 <td>
                                                     <span
                                                         class="badge
-                                                        @if ($item->status_pembayaran === 'pending') badge-warning
+                                                        @if ($item->status_pembayaran === 'pending') badge-warning p-2
                                                         @elseif ($item->status_pembayaran === 'disetujui')
                                                             badge-success p-2 @endif">
                                                         {{ ucfirst($item->status_pembayaran) }}
@@ -129,18 +131,6 @@
 
 
     @include('admin.script')
-
-    {{-- <script>
-        $(document).ready(function() {
-            $(".btn-edit").on("click", function() {
-                const id = $(this).data("id");
-                const nama = $(this).data("nama");
-
-                $("#editModal #nama").val(nama);
-                $("#editModal form").attr("action", `/admin/data-ruangan/update/${id}`);
-            });
-        });
-    </script> --}}
 </body>
 
 </html>

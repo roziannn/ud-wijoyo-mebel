@@ -134,27 +134,35 @@
                                         <ul class="nav main-menu menu navbar-nav">
                                             <li class=""><a href="{{ route('customer.home') }}">Home</a></li>
                                             <li><a href="{{ route('all.produk') }}">Semua Produk</a></li>
-                                            <li><a href="#">Produk Kategori<i class="ti-angle-down"></i><span
+                                            <li>
+                                                <a href="#">Produk Kategori <i class="ti-angle-down"></i><span
                                                         class="new">New</span></a>
                                                 <ul class="dropdown">
-                                                    <li><a href="shop-grid.html">Pintu</a></li>
-                                                    <li><a href="cart.html">Jendela</a></li>
-                                                    <li><a href="checkout.html">Lemari</a></li>
-                                                    <li><a href="checkout.html">Keramik</a></li>
-                                                    <li><a href="shop-grid.html">Cat</a></li>
-                                                    <li><a href="cart.html">Kaca</a></li>
-                                                    <li><a href="checkout.html">Kunci</a></li>
-                                                    <li><a href="checkout.html">Peralatan</a></li>
+                                                    @php
+                                                        $categories = \App\Models\Kategori::all();
+                                                    @endphp
+                                                    @foreach ($categories as $category)
+                                                        <li>
+                                                            <a
+                                                                href="{{ url('semua-produk?category=' . $category->nama) }}">{{ $category->nama }}</a>
+                                                        </li>
+                                                    @endforeach
                                                 </ul>
+
                                             </li>
+
                                             <li><a href="#">Ruangan<i class="ti-angle-down"></i><span
                                                         class="new">New</span></a>
                                                 <ul class="dropdown">
-                                                    <li><a href="shop-grid.html">Dapur</a></li>
-                                                    <li><a href="cart.html">Kamar Tidur</a></li>
-                                                    <li><a href="checkout.html">Kamar Anak</a></li>
-                                                    <li><a href="checkout.html">Ruang Tamu</a></li>
-                                                    <li><a href="checkout.html">Ruang Makan</a></li>
+                                                    @php
+                                                        $ruangans = \App\Models\Ruangan::all();
+                                                    @endphp
+                                                    @foreach ($ruangans as $ruangan)
+                                                        <li>
+                                                            <a
+                                                                href="{{ url('semua-produk?ruangan=' . $ruangan->nama) }}">{{ $ruangan->nama }}</a>
+                                                        </li>
+                                                    @endforeach
                                                 </ul>
                                             </li>
                                             <li><a href="{{ route('about.us') }}">Tentang Kami</a></li>

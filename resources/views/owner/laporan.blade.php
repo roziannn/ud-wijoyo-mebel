@@ -53,8 +53,12 @@
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="card">
-                                <div class="card-header">
+                                <div class="d-flex justify-content-between card-header">
                                     <h4 class="box-title">Laporan Laba Rugi UD Wijoyo Mebel</h4>
+                                    <a href="{{ route('owner.downloadLaporan') }}"
+                                        class="btn btn-primary btn-sm text-white">
+                                        <i class="menu-icon ti-download pr-2"></i>Download
+                                    </a>
                                 </div>
                                 <div class="card-body">
                                     {{-- <h2>Laporan Laba Rugi per Hari</h2> --}}
@@ -112,7 +116,13 @@
                                     </table>
                                 </div>
                                 <div class="card-body">
-                                    <h4 class="box-title">Riwayat Pendapatan</h4>
+                                    <div class="d-flex justify-content-between card-header">
+                                        <h4 class="box-title">Riwayat Pendapatan Masuk</h4>
+                                        <a href="{{ route('owner.downloadRiwayatPendapatan') }}"
+                                            class="btn btn-primary btn-sm">
+                                            <i class="menu-icon ti-download pr-2 text-white"></i>Download
+                                        </a>
+                                    </div>
                                     <hr>
                                     <table id="bootstrap-data-table2" class="table table-striped table-bordered">
                                         <thead>

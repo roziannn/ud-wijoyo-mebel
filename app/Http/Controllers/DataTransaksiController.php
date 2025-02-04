@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Checkout;
 use Illuminate\Http\Request;
+use App\Exports\TransaksiExport;
 use Flasher\Laravel\Facade\Flasher;
+use Illuminate\Support\Facades\Log;
+use Maatwebsite\Excel\Facades\Excel;
 
 class DataTransaksiController extends Controller
 {

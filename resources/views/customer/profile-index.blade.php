@@ -42,7 +42,8 @@
                                             <div class="form-group">
                                                 <label>Nama Lengkap<span>*</span></label>
                                                 <input type="text" class="form-control" name="nama_lengkap"
-                                                    placeholder="" required="required"value="{{ auth()->user()->name }}">
+                                                    placeholder=""
+                                                    required="required"value="{{ $customerInfo?->nama_lengkap }}">
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-12">

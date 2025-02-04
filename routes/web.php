@@ -1,23 +1,25 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PDFController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\ExportController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CheckoutController;
-use App\Http\Controllers\DashboardAdminController;
-use App\Http\Controllers\DashboardCustomerController;
-use App\Http\Controllers\DashboardKurirController;
-use App\Http\Controllers\DashboardOwnerController;
-use App\Http\Controllers\DataKategoriController;
+use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\DataProdukController;
 use App\Http\Controllers\DataRuanganController;
+use App\Http\Controllers\DataKategoriController;
 use App\Http\Controllers\DataTransaksiController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\KategoriOperasionalController;
-use App\Http\Controllers\KelolaOperasionalController;
-use App\Http\Controllers\PageController;
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\DashboardAdminController;
+use App\Http\Controllers\DashboardKurirController;
+use App\Http\Controllers\DashboardOwnerController;
 use App\Http\Controllers\ProfileCustomerController;
-use App\Http\Controllers\TransaksiController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardCustomerController;
+use App\Http\Controllers\KelolaOperasionalController;
+use App\Http\Controllers\KategoriOperasionalController;
 
 Route::get('/', function () {
     return view('auth.login');
@@ -56,6 +58,10 @@ Route::prefix('owner')->middleware(['auth', 'role:owner'])->group(function () {
     Route::get('/dashboard', [DashboardOwnerController::class, 'index'])->name('owner.dashboard');
     Route::get('/laporan-laba', [DashboardOwnerController::class, 'laporan'])->name('owner.laporan');
     Route::get('/laporan-laba/{tanggal}', [DashboardOwnerController::class, 'rincianLaporan'])->name('owner.laporan-rincian');
+
+    Route::get('/laporan-laba/download/all', [PDFController::class, 'downloadLaporan'])->name('owner.downloadLaporan');
+    Route::get('/laporan-laba/download/riwayatPendapatan', [PDFController::class, 'downloadRiwayatPendapatan'])->name('owner.downloadRiwayatPendapatan');
+    Route::get('/rincian-laporan/download/{tanggal}', [PDFController::class, 'rincianLaporanPDF'])->name('owner.rincian');
 });
 
 Route::prefix('admin')->middleware(['auth', 'role:admin'])->group(function () {
@@ -104,6 +110,11 @@ Route::get('/produk/{slug}', [HomeController::class, 'singleProduk'])->name('sin
 Route::get('/semua-produk', [HomeController::class, 'allProduk'])->name('all.produk');
 Route::get('/tentang-kami', [PageController::class, 'aboutUs'])->name('about.us');
 Route::get('/kontak-kami', [PageController::class, 'contactUs'])->name('kontak.kami');
+Route::get('/cara-pembayaran', [PageController::class, 'caraPembayaran'])->name('kontak.caraPembayaran');
+
+
+Route::get('/transaksi/export', [ExportController::class, 'exportTransaksi'])->name('transaksi.export');
+
 
 
 require __DIR__ . '/auth.php';

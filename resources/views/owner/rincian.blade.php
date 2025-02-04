@@ -52,7 +52,12 @@
                 <div class="orders">
                     <div class="row">
                         <div class="col-xl-12">
-                            <a href="{{ url()->previous() }}" class="btn btn-secondary mt-2">Kembali</a>
+                            <div class="d-flex justify-content-between">
+                                <a href="{{ url()->previous() }}" class="btn btn-secondary mt-2 btn-sm">Kembali</a>
+                                <a href="{{ route('owner.rincian', $tanggal) }}"
+                                    class="btn btn-primary text-white mt-2 btn-sm"><i
+                                        class="menu-icon ti-download pr-2"></i>Download</a>
+                            </div>
                             <div class="card">
                                 <div class="card-header">
                                     <h4 class="box-title mb-2">Laporan Laba Rugi UD Wijoyo Mebel</h4>
